@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "196074013423",
+    "firebase_url": "https://creme-brulee-1111.firebaseio.com",
+    "project_id": "creme-brulee-1111",
+    "storage_bucket": "creme-brulee-1111.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196074013423:android:5fdf78f9185ac57d",
+        "android_client_info": {
+          "package_name": "plscuddleme.yuhanlee.cremebrulee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196074013423-552ombd8ih72189oq43lek7ki3cusaeu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "plscuddleme.yuhanlee.cremebrulee",
+            "certificate_hash": "032c8fb707a78e24ad8c4e41cd09eb684aee9529"
+          }
+        },
+        {
+          "client_id": "196074013423-qvh4fikn67f5i9p93ia6pon5h02pmuro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmk9qXbyEaoBfCGFvymq45KDmwfLIHFkE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196074013423-qvh4fikn67f5i9p93ia6pon5h02pmuro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
