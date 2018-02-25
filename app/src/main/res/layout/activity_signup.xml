@@ -20,52 +20,63 @@
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
             android:layout_marginTop="20dp"
-            android:text="@string/sign_in"
+            android:text="@string/create_account"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
 
         <ImageView
             android:id="@+id/signInPic"
-            android:layout_width="250dp"
-            android:layout_height="230dp"
+            android:layout_width="450dp"
+            android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/sign_in" />
+            android:src="@drawable/sign_up" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/sign_up_email"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:hint="@string/enter_email"
+            android:hint="@string/signup_email"
             android:inputType="textEmailAddress"
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/sign_up_password"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
             android:gravity="center"
-            android:hint="@string/enter_password"
+            android:hint="@string/signup_password"
             android:inputType="textPassword" />
 
+        <EditText
+            android:id="@+id/confirm_sign_up_password"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword" />
+
+
         <Button
-            android:id="@+id/sign_in"
+            android:id="@+id/buttonRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/lets_go" />
+            android:text="@string/register" />
 
         <TextView
-            android:id="@+id/join_now"
+            android:id="@+id/signInHere"
             android:layout_width="250dp"
             android:layout_height="25dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/join_now" />
+            android:text="@string/signIn_here" />
 
 
     </LinearLayout>
