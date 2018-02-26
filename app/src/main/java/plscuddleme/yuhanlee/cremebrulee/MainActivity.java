@@ -103,6 +103,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void gotoSignUp() {
         finish();
-        startActivity(new Intent(this, SignUpActivity.class));
+        startActivity(new Intent(MainActivity.this, SignUpActivity.class));
     }
 }

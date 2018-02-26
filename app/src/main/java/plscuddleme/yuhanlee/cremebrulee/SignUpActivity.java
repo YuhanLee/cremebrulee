@@ -42,7 +42,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         editTextEmail = (EditText) findViewById(R.id.sign_up_email);
         editTextPassword = (EditText) findViewById(R.id.sign_up_password);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
-        textViewLogin = (TextView) findViewById(R.id.textViewLogin);
+        textViewLogin = (TextView) findViewById(R.id.signInHere);
 
 
         //attaching listener to button
@@ -58,7 +58,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 registerUser();
                 break;
 
-            case R.id.textViewLogin:
+            case R.id.signInHere:
                 finish();
                 startActivity(new Intent(this, MainActivity.class));
                 break;
