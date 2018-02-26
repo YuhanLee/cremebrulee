@@ -43,7 +43,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         editTextPassword = (EditText) findViewById(R.id.sign_up_password);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         textViewLogin = (TextView) findViewById(R.id.signInHere);
-
+        registerDialog = new ProgressDialog(this);
+        firebaseAuth = FirebaseAuth.getInstance();
 
         //attaching listener to button
         buttonRegister.setOnClickListener(this);
