@@ -4,4 +4,12 @@
     <string name="enter_email">Enter Email</string>
     <string name="enter_password">Enter Password</string>
     <string name="lets_go">Let\'s Go</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="signup_email">Email Please</string>
+    <string name="signup_password">Password Please</string>
+    <string name="confirm_password">Verify Password</string>
+    <string name="create_account">Come and Get Your Love</string>
+    <string name="join_now">Join now</string>
+    <string name="signIn_here">Have an account? Sign in Here</string>
+    <string name="register">Register</string>
 </resources>
