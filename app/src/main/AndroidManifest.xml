@@ -16,10 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity">
-
-        </activity>
+        <activity android:name=".SignUpActivity"></activity>
         <activity android:name=".DashBoardActivity" />
+        <activity
+            android:name=".tabs"
+            android:label="@string/title_activity_tabs"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

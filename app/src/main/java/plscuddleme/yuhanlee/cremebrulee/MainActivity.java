@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView textViewJoinNow;
     private Button buttonSignIn;
     private ProgressDialog signInDialog;
+    private Button opentabs;
 
 
     @Override
@@ -41,7 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewJoinNow = (TextView) findViewById(R.id.join_now);
         buttonSignIn = (Button) findViewById(R.id.sign_in);
         signInDialog = new ProgressDialog(this);
+        opentabs = (Button) findViewById(R.id.button1);
 
+        opentabs.setOnClickListener(this);
         buttonSignIn.setOnClickListener(this);
         textViewJoinNow.setOnClickListener(this);
 
@@ -64,6 +67,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.join_now:
                 gotoSignUp();
                 break;
+            case R.id.button1:
+                gototabs();
+                break;
+
         }
     }
 
@@ -104,5 +111,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void gotoSignUp() {
         finish();
         startActivity(new Intent(MainActivity.this, SignUpActivity.class));
+    }
+    private void gototabs() {
+        finish();
+        startActivity(new Intent(MainActivity.this, tabs.class));
     }
 }
