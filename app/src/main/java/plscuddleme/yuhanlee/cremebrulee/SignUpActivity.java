@@ -12,10 +12,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,6 +27,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private Button buttonRegister;
     private EditText editTextEmail;
     private EditText editTextPassword;
+    private EditText editTextConfirmPassword;
     private TextView textViewLogin;
     private ProgressDialog registerDialog;
 
@@ -37,12 +35,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_sign_up);
 
         editTextEmail = (EditText) findViewById(R.id.sign_up_email);
         editTextPassword = (EditText) findViewById(R.id.sign_up_password);
-        buttonRegister = (Button) findViewById(R.id.buttonRegister);
-        textViewLogin = (TextView) findViewById(R.id.signInHere);
+        editTextConfirmPassword = (EditText) findViewById(R.id.confirm_sign_up_password);
+
+        buttonRegister = (Button) findViewById(R.id.button_register);
+        textViewLogin = (TextView) findViewById(R.id.sign_in_here);
         registerDialog = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -55,11 +55,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.buttonRegister:
+            case R.id.button_register:
                 registerUser();
                 break;
 
-            case R.id.signInHere:
+            case R.id.sign_in_here:
                 finish();
                 startActivity(new Intent(this, MainActivity.class));
                 break;
@@ -70,9 +70,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         final String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+        String confirmPassword = editTextConfirmPassword.getText().toString().trim();
+
 
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "You're missing a field", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            Toast.makeText(this, "Your password must match",Toast.LENGTH_LONG).show();
             return;
         }
 
