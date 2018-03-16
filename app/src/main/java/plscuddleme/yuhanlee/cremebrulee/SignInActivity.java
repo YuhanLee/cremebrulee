@@ -51,6 +51,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         buttonSignIn.setOnClickListener(this);
         textViewJoinNow.setOnClickListener(this);
+        firebaseAuth = FirebaseAuth.getInstance();
     }
 
     @Override
@@ -75,9 +76,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void gotoCreateProfile() {
-
         finish();
-        startActivity(new Intent(SignInActivity.this, CreateProfile.class));
+        startActivity(new Intent(SignInActivity.this, Profile.class));
     }
 
     private void userLogIn() {
@@ -104,14 +104,12 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                         signInDialog.dismiss();
                         if (task.isSuccessful()) {
                             finish();
-                            startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+                            startActivity(new Intent(getApplicationContext(), Profile.class));
                         } else {
                             Toast.makeText(getApplicationContext(), "Sign in unsuccessful: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
-
                     }
                 });
-
     }
 
     private void gotoSignUp() {
