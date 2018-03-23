@@ -3,4 +3,57 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!--Lighter 100 colors -->
+    <color name="light_red">#FFCDD2</color>
+    <color name="light_pink">#F8BBD0</color>
+    <color name="light_purple">#E1BEE7</color>
+    <color name="light_deep_purple">#D1C4E9</color>
+    <color name="light_indigo">#C5CAE9</color>
+    <color name="light_blue">#BBDEFB</color>
+    <color name="light_light_blue">#B3E5FC</color>
+    <color name="light_cyan">#B2EBF2</color>
+    <color name="light_teal">#B2DFDB</color>
+    <color name="light_green">#C8E6C9</color>
+    <color name="light_light_green">#DCEDC8</color>
+    <color name="light_lime">#F0F4C3</color>
+    <color name="light_yellow">#FFF9C4</color>
+    <color name="light_amber">#FFECB3</color>
+    <color name="light_orange">#FFE0B2</color>
+    <color name="light_deep_orange">#FFCCBC</color>
+    <color name="light_brown">#D7CCC8</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="light_blue_gray">#CFD8DC</color>
+
+
+    <!--Medium 200 colors -->
+    <color name="medium_red">#EF9A9A</color>
+    <color name="medium_pink">#F48FB1</color>
+    <color name="medium_purple">#CE93D8</color>
+    <color name="medium_deep_purple">#B39DDB</color>
+    <color name="medium_indigo">#9FA8DA</color>
+    <color name="medium_blue">#90CAF9</color>
+    <color name="medium_light_blue">#81D4FA</color>
+    <color name="medium_cyan">#80DEEA</color>
+    <color name="medium_teal">#80CBC4</color>
+    <color name="medium_green">#A5D6A7</color>
+    <color name="medium_light_green">#C5E1A5</color>
+    <color name="medium_lime">#E6EE9C</color>
+    <color name="medium_yellow">#FFF59D</color>
+    <color name="medium_amber">#FFE082</color>
+    <color name="medium_orange">#FFCC80</color>
+    <color name="medium_deep_orange">#FFAB91</color>
+    <color name="medium_brown">#BCAAA4</color>
+    <color name="medium_gray">#EEEEEE</color>
+    <color name="medium_blue_gray">#B0BEC5</color>
+
+
+
+    <!--Darker 600 colors -->
+    <color name="dark_gray">#757575</color>
 </resources>

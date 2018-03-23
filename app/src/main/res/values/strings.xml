@@ -8,11 +8,26 @@
     <string name="signup_email">Email Please</string>
     <string name="signup_password">Password Please</string>
     <string name="confirm_password">Verify Password</string>
-    <string name="create_account">Come and Get Your Love</string>
+    <string name="create_account">Find Your Minion!</string>
     <string name="join_now">Join now</string>
     <string name="signIn_here">Have an account? Sign in Here</string>
     <string name="register">Register</string>
     <string name="title_activity_tabs">tabs</string>
     <string name="settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="section_format">Hello World from section: </string>
+
+
+    <!--profile page -->
+    <string name="profile">Profile</string>
+    <string name="interests">Interests</string>
+    <string name="opinions">Opinions</string>
+    <string name="activities">Activities</string>
+    <string name="profile_description">Edit Your Profile</string>
+    <string name="interest_description">What do you like?</string>
+    <string name="opinion_description">What are your opinions on..</string>
+    <string name="activity_description">What do you like to do?</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+
+
 </resources>
