@@ -29,7 +29,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private Button buttonSignIn;
     private ProgressDialog signInDialog;
     private Button opentabs;
-    private Button openProfile; //this has to be removed later on
 
 
     @Override
@@ -43,11 +42,9 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         buttonSignIn = (Button) findViewById(R.id.sign_in);
         signInDialog = new ProgressDialog(this);
         opentabs = (Button) findViewById(R.id.button1);
-        openProfile = (Button) findViewById(R.id.profile_button_tmp);
 
         // Remove (tmp buttons later on)
         opentabs.setOnClickListener(this);
-        openProfile.setOnClickListener(this);
 
         buttonSignIn.setOnClickListener(this);
         textViewJoinNow.setOnClickListener(this);
@@ -66,10 +63,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.button1:
                 gototabs();
-                break;
-
-            case R.id.profile_button_tmp:
-                gotoCreateProfile();
                 break;
 
         }
@@ -113,7 +106,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void gotoSignUp() {
-        finish();
         startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
     }
     private void gototabs() {

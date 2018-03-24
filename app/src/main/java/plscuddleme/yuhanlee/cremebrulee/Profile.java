@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     private Button logOut;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    private ImageView imageActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                 //is coming from sign up
                 //TODO: make it call setUserContext like when you just log in
                 setUserContext(extras.getString("uuid"));
-
 
             } else {
                 //just loggin in
@@ -98,6 +99,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         editUserName.setOnClickListener(this);
         logOut = (Button) findViewById(R.id.log_out);
         logOut.setOnClickListener(this);
+        imageActivity = (ImageView) findViewById(R.id.interest_activity);
+        imageActivity.setOnClickListener(this);
     }
 
     @Override
@@ -176,7 +179,9 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void editInterestActivity() {
-        Toast.makeText(this, "interests", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Get Ready!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getApplicationContext(), PickInterest.class);
+        startActivity(intent);
     }
 
     private void editOpinionsActivity() {
