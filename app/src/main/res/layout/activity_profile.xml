@@ -129,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="@string/edit_your_profile"
+                        android:text="@string/profile_description"
                         android:textColor="@color/dark_gray" />
 
                 </LinearLayout>
@@ -137,7 +137,6 @@
 
 
             <android.support.v7.widget.CardView
-                android:id="@+id/interest_activity"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_marginStart="20dp">
@@ -149,6 +148,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/interest_activity"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:padding="15dp"
@@ -173,7 +173,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="@string/what_do_you_like"
+                        android:text="@string/interest_description"
                         android:textColor="@color/dark_gray" />
 
                 </LinearLayout>
@@ -222,7 +222,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="@string/whats_your_opinion"
+                        android:text="@string/opinion_description"
                         android:textColor="@color/dark_gray" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -267,17 +267,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="@string/what_do_you_like_to_do"
+                        android:text="@string/activity_description"
                         android:textColor="@color/dark_gray" />
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
-
         </LinearLayout>
-
-
     </RelativeLayout>
-
-
 </RelativeLayout>
