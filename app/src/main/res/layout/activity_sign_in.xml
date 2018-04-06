@@ -5,68 +5,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerInParent="true"
-    android:paddingTop="10dp"
+    android:background="@drawable/sign_in_background"
     tools:context="plscuddleme.yuhanlee.cremebrulee.MainActivity">
 
     <LinearLayout
+        android:layout_marginTop="@dimen/global_margin_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textView_welcome"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
             android:layout_marginTop="20dp"
-            android:text="@string/sign_in"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="Welcome!" />
 
         <ImageView
             android:id="@+id/sign_in_image"
             android:layout_width="250dp"
-            android:layout_height="230dp"
+            android:layout_height="250dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/sign_in" />
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dog2" />
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="250dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="@string/enter_email"
-            android:inputType="textEmailAddress"
-            android:textAlignment="center" />
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/enter_password"
-            android:inputType="textPassword" />
 
-        <Button
-            android:id="@+id/sign_in"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/lets_go" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="@string/enter_email"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/join_now"
-            android:layout_width="250dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/join_now" />
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/enter_password"
+                android:inputType="textPassword" />
 
+            <Button
+                android:id="@+id/sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lets_go" />
+
+            <TextView
+                android:id="@+id/join_now"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/join_now" />
+
+
+
+
+
+        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>

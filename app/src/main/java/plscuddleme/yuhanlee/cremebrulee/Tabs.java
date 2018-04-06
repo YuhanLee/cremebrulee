@@ -138,7 +138,7 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
                 case 3:
                     rootView = inflater.inflate(R.layout.fragment_tabs, container, false);
                     textView = (TextView) rootView.findViewById(R.id.section_label);
-                    textView.setText(getString(R.string.section_format, this.getArguments().getInt(ARG_SECTION_NUMBER)));
+                    textView.setText(Integer.toString(tab));
                     break;
             }
             return rootView;
