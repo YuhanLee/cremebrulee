@@ -200,7 +200,6 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void setView() {
-      //  setContentView(R.layout.activity_profile);
         editUserName = (TextView) findViewById(R.id.edit_user_name);
         editUserName.setText(userFullName);
         editUserName.setOnClickListener(this);
