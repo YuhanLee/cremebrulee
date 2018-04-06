@@ -22,9 +22,8 @@
         </activity>
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".Profile" />
         <activity
-            android:name=".tabs"
+            android:name=".Tabs"
             android:label="@string/title_activity_tabs"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

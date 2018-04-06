@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FirebaseApp.initializeApp(this);
         firebaseAuth = FirebaseAuth.getInstance();
         if (firebaseAuth.getCurrentUser() == null) {
-            finish();
             startActivity(new Intent(this, SignInActivity.class));
-        } else {
             finish();
-            startActivity(new Intent(this, Profile.class));
+        } else {
+            startActivity(new Intent(this, Tabs.class));
+            finish();
         }
     }
 
