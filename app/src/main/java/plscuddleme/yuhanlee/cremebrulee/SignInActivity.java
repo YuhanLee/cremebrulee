@@ -41,10 +41,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         textViewJoinNow = (TextView) findViewById(R.id.join_now);
         buttonSignIn = (Button) findViewById(R.id.sign_in);
         signInDialog = new ProgressDialog(this);
-        opentabs = (Button) findViewById(R.id.button1);
 
         // Remove (tmp buttons later on)
-        opentabs.setOnClickListener(this);
 
         buttonSignIn.setOnClickListener(this);
         textViewJoinNow.setOnClickListener(this);
@@ -61,17 +59,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.join_now:
                 gotoSignUp();
                 break;
-            case R.id.button1:
-                gototabs();
-                break;
 
         }
     }
 
-    private void gotoCreateProfile() {
-        finish();
-        startActivity(new Intent(SignInActivity.this, Profile.class));
-    }
+
 
     private void userLogIn() {
         String email = editTextEmail.getText().toString().trim();
@@ -97,7 +89,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                         signInDialog.dismiss();
                         if (task.isSuccessful()) {
                             finish();
-                            startActivity(new Intent(getApplicationContext(), Profile.class));
+                            startActivity(new Intent(getApplicationContext(), Tabs.class));
                         } else {
                             Toast.makeText(getApplicationContext(), "Sign in unsuccessful: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
@@ -110,7 +102,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     }
     private void gototabs() {
         finish();
-        startActivity(new Intent(SignInActivity.this, tabs.class));
+        startActivity(new Intent(SignInActivity.this, Tabs.class));
     }
 }
 

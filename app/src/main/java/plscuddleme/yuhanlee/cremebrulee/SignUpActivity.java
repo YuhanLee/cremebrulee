@@ -110,8 +110,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             registerUserTodb(newMember, uuid);
                             finish();
 
-                            Intent intent = new Intent(getApplicationContext(), Profile.class);
-                            intent.putExtra("uuid", uuid);
+                            Intent intent = new Intent(getApplicationContext(), Tabs.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(SignUpActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();

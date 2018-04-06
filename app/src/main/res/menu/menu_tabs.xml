@@ -1,10 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="plscuddleme.yuhanlee.cremebrulee.tabs">
+    tools:context="plscuddleme.yuhanlee.cremebrulee.Tabs">
     <item
-        android:id="@+id/action_settings"
+    android:id="@+id/action_settings"
+    android:orderInCategory="100"
+    android:title="@string/settings"
+    app:showAsAction="never" />
+    <item
+        android:id="@+id/action_logout"
         android:orderInCategory="100"
-        android:title="@string/settings"
+        android:title="@string/logout"
         app:showAsAction="never" />
 </menu>
