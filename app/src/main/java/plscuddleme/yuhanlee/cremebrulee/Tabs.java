@@ -1,9 +1,8 @@
 package plscuddleme.yuhanlee.cremebrulee;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -19,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,10 +35,10 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
     private TextView editUserName;
     private String userFullName;
     private String firstName;
-    private Button logOut;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
-    private ImageView imageActivity;
+
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -97,48 +97,30 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
     public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
+        private static final String TAB_NUMBER = "section_number";
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            args.putInt(TAB_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        @SuppressLint("StringFormatInvalid")
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            int tab = this.getArguments().getInt(ARG_SECTION_NUMBER);
+            int tab = this.getArguments().getInt(TAB_NUMBER);
             View rootView=null;
-            TextView textView;
             switch (tab) {
                 case 1:
                     rootView = inflater.inflate(R.layout.activity_profile, container, false);
                     break;
                 case 2:
-                    rootView = inflater.inflate(R.layout.fragment_tabs, container, false);
-                    textView = (TextView) rootView.findViewById(R.id.section_label);
-                    textView.setText(Integer.toString(tab));
+                    rootView = inflater.inflate(R.layout.images, container, false);
                     break;
                 case 3:
-                    rootView = inflater.inflate(R.layout.fragment_tabs, container, false);
-                    textView = (TextView) rootView.findViewById(R.id.section_label);
-                    textView.setText(Integer.toString(tab));
+                    rootView = inflater.inflate(R.layout.messaging, container, false);
                     break;
             }
             return rootView;
@@ -196,41 +178,12 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
     private void getMember(Member member) {
         userFullName = member.getFullName();
         firstName = member.getFirstName();
-        setView();
-    }
-
-    private void setView() {
         editUserName = (TextView) findViewById(R.id.edit_user_name);
         editUserName.setText(userFullName);
-        editUserName.setOnClickListener(this);
-        imageActivity = (ImageView) findViewById(R.id.interest_activity);
-        imageActivity.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        //TODO: find a way to attach onclick listeners to the 4 cards
-        switch (v.getId()) {
-            case R.id.profile_activity:
-                editProfileActivity();
-                break;
-
-            case R.id.interest_activity:
-                editInterestActivity();
-                break;
-
-            case R.id.opinions_activity:
-                editOpinionsActivity();
-                break;
-
-            case R.id.activities_activity:
-                editActivitiesActivity();
-                break;
-
-            case R.id.edit_user_name:
-                editUserName();
-                break;
-        }
     }
 
     public void logOut() {
@@ -269,28 +222,6 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
                 startActivity(new Intent(getApplicationContext(), SignInActivity.class));
             }
         });
-    }
-
-    private void editProfileActivity() {
-        Toast.makeText(this, "profile", Toast.LENGTH_LONG).show();
-    }
-
-    private void editInterestActivity() {
-        Toast.makeText(this, "Get Ready!", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(getApplicationContext(), PickInterest.class);
-        startActivity(intent);
-    }
-
-    private void editOpinionsActivity() {
-        Toast.makeText(this, "opinions", Toast.LENGTH_LONG).show();
-    }
-
-    private void editActivitiesActivity() {
-        Toast.makeText(this, "activities", Toast.LENGTH_LONG).show();
-    }
-
-    private void editUserName(){
-        Toast.makeText(this, "Should allow user to edit name", Toast.LENGTH_LONG).show();
     }
 }
 

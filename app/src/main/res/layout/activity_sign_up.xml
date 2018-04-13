@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sign_up_background"
+    android:background="@color/light_blue"
     android:layout_centerInParent="true"
     tools:context="plscuddleme.yuhanlee.cremebrulee.MainActivity">
 
@@ -19,6 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
+            android:textStyle="bold"
+            android:typeface="serif"
             android:text="@string/create_account"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 

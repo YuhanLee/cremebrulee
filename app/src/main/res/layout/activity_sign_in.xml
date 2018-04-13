@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerInParent="true"
-    android:background="@drawable/sign_in_background"
-    tools:context="plscuddleme.yuhanlee.cremebrulee.MainActivity">
+    android:background="@color/light_blue"
+    tools:context="plscuddleme.yuhanlee.cremebrulee.SignInActivity">
 
     <LinearLayout
         android:layout_marginTop="@dimen/global_margin_container"
@@ -20,8 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:typeface="serif"
             android:textStyle="bold"
+            android:typeface="serif"
             android:gravity="center"
             android:textSize="30dp"
             android:text="Welcome!" />
@@ -34,7 +34,8 @@
             android:adjustViewBounds="true"
             android:cropToPadding="false"
             android:scaleType="centerCrop"
-            android:src="@drawable/dog2" />
+            android:src="@drawable/dog2"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,11 +79,6 @@
                 android:gravity="center"
                 android:text="@string/join_now" />
 
-
-
-
-
         </LinearLayout>
-
     </LinearLayout>
 </RelativeLayout>

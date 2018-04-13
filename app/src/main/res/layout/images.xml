@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue"
+    tools:context="plscuddleme.yuhanlee.cremebrulee.Tabs$PlaceholderFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/global_margin_container"
+        android:layout_marginVertical="@dimen/global_margin_container"
+        android:gravity="center_horizontal">
+
+
+        <FrameLayout
+            android:id="@+id/imagesFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/image_pic"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dog2" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
