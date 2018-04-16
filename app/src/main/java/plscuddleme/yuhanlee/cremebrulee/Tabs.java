@@ -1,7 +1,7 @@
 package plscuddleme.yuhanlee.cremebrulee;
 
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,13 +15,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -37,16 +33,13 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
     private String firstName;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    public Member member;
 
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
+    public Member getMember() {
+        return member;
+    }
+
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
@@ -72,7 +65,26 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         final String userId = firebaseUser.getUid();
-        setUserContext(userId);
+
+        DatabaseReference databaseUsers;
+        databaseUsers = FirebaseDatabase.getInstance().getReference().child("Members");
+        databaseUsers.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String idFromDatabase;
+                for (DataSnapshot Member : dataSnapshot.getChildren()) {
+                    member = Member.getValue(Member.class);
+                    idFromDatabase = member.getUuid();
+                    if (userId.equals(idFromDatabase)) {
+                        break;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     @Override
@@ -97,41 +109,8 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
         return super.onOptionsItemSelected(item);
     }
 
-    public static class PlaceholderFragment extends Fragment {
-        private static final String TAB_NUMBER = "section_number";
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(TAB_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            int tab = this.getArguments().getInt(TAB_NUMBER);
-            View rootView=null;
-            switch (tab) {
-                case 1:
-                    rootView = inflater.inflate(R.layout.activity_profile, container, false);
-                    break;
-                case 2:
-                    rootView = inflater.inflate(R.layout.images, container, false);
-                    break;
-                case 3:
-                    rootView = inflater.inflate(R.layout.messaging, container, false);
-                    break;
-            }
-            return rootView;
-        }
-    }
-
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/Tabs/pages.
-     */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public static class SectionsPagerAdapter extends FragmentPagerAdapter {
+        private int TAB_COUNT = 3;
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -139,47 +118,22 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                    return ProfileFragment.newInstance();
+                case 1:
+                    return ImageFragment.newInstance();
+                case 2:
+                    return MessagingFragment.newInstance();
+                default:
+                    return null;
+            }
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            return TAB_COUNT;
         }
-    }
-
-    private void setUserContext(final String userId) {
-        // Get the logged in user information
-        DatabaseReference databaseUsers;
-        databaseUsers = FirebaseDatabase.getInstance().getReference().child("Members");
-        databaseUsers.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String idFromDatabase;
-                for (DataSnapshot Member : dataSnapshot.getChildren()) {
-                    Member member = Member.getValue(Member.class);
-                    idFromDatabase = member.getUuid();
-                    if (userId.equals(idFromDatabase)) {
-                        getMember(member);
-                        break;
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
-    }
-
-    private void getMember(Member member) {
-        userFullName = member.getFullName();
-        firstName = member.getFirstName();
-        editUserName = (TextView) findViewById(R.id.edit_user_name);
-        editUserName.setText(userFullName);
     }
 
     @Override
@@ -218,8 +172,8 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
             public void onClick(View view) {
                 firebaseAuth.signOut();
                 b.dismiss();
-                finish();
                 startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+                finish();
             }
         });
     }

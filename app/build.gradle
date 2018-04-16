@@ -35,7 +35,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     //image loader library..provides animated GIF support and handles image loading/caching.
-    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    compile 'com.github.bumptech.glide:glide:4.6.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
 
