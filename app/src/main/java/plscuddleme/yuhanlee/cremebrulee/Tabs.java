@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,12 +29,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Tabs extends AppCompatActivity implements View.OnClickListener{
-    private TextView editUserName;
-    private String userFullName;
-    private String firstName;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     public Member member;
+    private String TAG = "Tab Activity";
 
 
     public Member getMember() {
@@ -68,7 +67,8 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
 
         DatabaseReference databaseUsers;
         databaseUsers = FirebaseDatabase.getInstance().getReference().child("Members");
-        databaseUsers.addListenerForSingleValueEvent(new ValueEventListener() {
+
+        databaseUsers.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String idFromDatabase;
@@ -83,6 +83,8 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+                Log.w(TAG, "loadUser:onCancelled", databaseError.toException());
+
             }
         });
     }
@@ -150,7 +152,7 @@ public class Tabs extends AppCompatActivity implements View.OnClickListener{
         TextView logoutText = (TextView) dialogView.findViewById(R.id.confirmLogout);
         logoutText.setText(logOutText);
 
-        dialogBuilder.setTitle("Bye Bye " + firstName + " :'(");
+//        dialogBuilder.setTitle("Bye Bye " + firstName + " :'(");
         final AlertDialog b = dialogBuilder.create();
         b.show();
 
