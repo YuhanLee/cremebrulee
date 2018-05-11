@@ -28,7 +28,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private TextView textViewJoinNow;
     private Button buttonSignIn;
     private ProgressDialog signInDialog;
-    private Button opentabs;
 
 
     @Override
@@ -41,8 +40,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         textViewJoinNow = (TextView) findViewById(R.id.join_now);
         buttonSignIn = (Button) findViewById(R.id.sign_in);
         signInDialog = new ProgressDialog(this);
-
-        // Remove (tmp buttons later on)
 
         buttonSignIn.setOnClickListener(this);
         textViewJoinNow.setOnClickListener(this);
@@ -59,17 +56,14 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.join_now:
                 gotoSignUp();
                 break;
-
         }
     }
-
 
 
     private void userLogIn() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         if (TextUtils.isEmpty(email)) {
-
             Toast.makeText(this, "Please Enter an Email", Toast.LENGTH_LONG).show();
             return;
         }
@@ -99,10 +93,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
     private void gotoSignUp() {
         startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
-    }
-    private void gototabs() {
-        finish();
-        startActivity(new Intent(SignInActivity.this, Tabs.class));
     }
 }
 

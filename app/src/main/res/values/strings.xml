@@ -8,7 +8,7 @@
     <string name="signup_email">Email Please</string>
     <string name="signup_password">Password Please</string>
     <string name="confirm_password">Verify Password</string>
-    <string name="create_account">Find Your Minion!</string>
+    <string name="create_account">Sign Up!</string>
     <string name="join_now">Join now</string>
     <string name="signIn_here">Have an account? Sign in Here</string>
     <string name="register">Register</string>
@@ -40,6 +40,9 @@
     <string name="image_title_5">Puppys are cute</string>
     <string name="image_title_6">Puppys are cute</string>
     <string name="image_title_7">Puppys are cute</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
